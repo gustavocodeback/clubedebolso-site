@@ -57,22 +57,7 @@ class MY_Controller extends CI_Controller {
     *
     */
     protected function _guard( $public = false ) {
-
-        // verifica se a url é protegida
-        if ( $this->public && $this->guard->currentUser() !== null ) {
-
-            // redireciona para a url de guard
-            redirect( site_url( 'dashboard' ) );
-            die();
-        };
-
-        // verifica se o usuario esta logado
-        if ( !$this->public && $this->guard->currentUser() === null ) {
-
-            // redireciona para a url de guard
-            redirect( $this->urlGuard );
-            die();
-        };
+        return;
     }
 
    /**
@@ -216,6 +201,26 @@ class MY_Controller extends CI_Controller {
             $this->view->setTitle( 'Acesso negado' )->render( 'denied' );
             return false;
         } else return true;
+    }
+
+   /**
+    * debug
+    *
+    * faz o debug de uma variável
+    *
+    */
+    public function debug( $var, $stopable = true ) {
+
+        // imprime a tag de prévisualizacao
+        echo '<pre>';
+        
+        // verifica se deve parar a execução
+        if ( $stopable ) {
+
+            // roda com o die
+            die( var_dump( $var ) );
+
+        } else var_dump( $var );
     }
 }
 

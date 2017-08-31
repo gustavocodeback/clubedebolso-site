@@ -14,8 +14,8 @@
                 <h4 style="color: #999">Entre com a sua conta Clube de Bolso</h4>
             </div>
 
-            <?php input_text( false, 'email', false, [ 'placeholder' => 'E-mail', 'length' => 12, 'type' => 'email' ] ); ?>
-            <?php input_text( false, 'email', false, [ 'placeholder' => 'Senha', 'length' => 12, 'type' => 'password' ] ); ?>
+            <?php input_text( false, 'email', false, [ 'required' => 'required', 'placeholder' => 'E-mail', 'length' => 12, 'type' => 'email' ] ); ?>
+            <?php input_text( false, 'senha', false, [ 'required' => 'required', 'placeholder' => 'Senha', 'length' => 12, 'type' => 'password' ] ); ?>
             
             <?php if ( $view->item( 'error' ) ): ?>
             <div class="alert alert-danger">
@@ -35,13 +35,13 @@
             <hr>            
             <div class="row">
                 <div class="col-md-12">
-                    <a href="<?php echo site_url( 'home' ); ?>" class="btn pull-right btn-primary btn-lg btn-block">
+                    <button type="submit" class="btn pull-right btn-primary btn-lg btn-block">
                         Entrar
-                    </a>
+                    </button>
                 </div>
             </div><!-- boto de login -->
             <br>
-            <div class="row">
+            <div class="row hidden">
                 <div class="col-md-4">
                     <button class="btn btn-block btn-primary">
                         Facebook

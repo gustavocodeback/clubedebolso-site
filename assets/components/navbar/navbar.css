@@ -1,20 +1,22 @@
 #navbar {
     width: 100%;
-    height: 80px;
+    height: 90px;
     background: #726E84;    
-}
-#navbar .btn {
-    padding: 9px;
-    border-radius: 0px;
 }
 
 #navbar .line {
     width: 100%;
-    height: 40px;
+    height: 50px;
+    display: table;
 }
 
 #navbar .line.has-nav-link-content {
     text-align: center;
+    height: 40px;    
+}
+
+#navbar .line.light {
+    background: #f1f1f1;
 }
 
 #navbar .line .nav-link-content {
@@ -45,19 +47,64 @@
 
 #navbar .line .nav-link-content .nav-link {
     font-size: 18px;
-    color: #fff;
-    padding: 4px 20px;
-    padding-bottom: 8px;
+    color: #726E84;
+    padding: 8px 20px;
+    padding-bottom: 5px;
     display: inline-block;
-    border-bottom: 5px solid transparent;
+    border-bottom: 2px solid transparent;
+    transition: .25s;
+}
+
+#navbar .line .nav-link-content .nav-link:hover {
+    cursor: pointer;
+    border-color: #726E84;    
 }
 
 #navbar .line .nav-link-content .nav-link.active {
-    border-color: #fff;
+    border-color: #726E84;
 }
 
 #navbar .line .btn {
     background: #726E84;
     color: #fff;
     font-weight: bold;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 0px;    
+}
+
+#navbar .search-wrapper {
+    width: 300px;
+    float: left;
+    margin: 5px;
+    height: 40px;
+    position: relative;
+}
+
+#navbar .search-wrapper input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: calc( 100% - 40px );
+    border: 0px;
+    padding: 10px 10px;
+}
+
+#navbar .search-wrapper button {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    border: 0px;
+}
+
+@media ( max-width: 600px )  {
+    #navbar .line {
+        height: 100px;
+        background: #726E84;
+    }
+    #navbar .search-wrapper {
+        width: 100%;
+    }
 }

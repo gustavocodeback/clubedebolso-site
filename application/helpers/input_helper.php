@@ -66,6 +66,9 @@ if( ! function_exists( 'has_error' ) ) {
 if ( ! function_exists( 'input_text' ) ) {
     function input_text( $label, $name, $entity = false, $attr = [] ) {
 
+        // pega a instancia do ci
+        $ci = get_instance();
+
         // verifica se existe um erro
         $erros = has_error( $label );
         $statusClass = $erros ? 'has-error' : '';
@@ -88,13 +91,13 @@ if ( ! function_exists( 'input_text' ) ) {
         $value = '';
         if ( is_object( $entity ) && isset( $entity->$name ) ) {
             $value = $entity->$name;
-        }
-        if ( is_array( $entity ) && isset( $entity[$name] ) ) {
+        } else if ( is_array( $entity ) && isset( $entity[$name] ) ) {
             $value = $entity[$name];
-        }
-        if ( isset( $attr['value'] ) ) {
+        } else if ( isset( $attr['value'] ) ) {
             $value = $attr['value'];
             unset( $attr['value'] );
+        } else if ( $ci->input->post( $name ) ) {
+            $value = $ci->input->post( $name );
         }
 
         // verifica se deve iniciar a linha
@@ -118,7 +121,7 @@ if ( ! function_exists( 'input_text' ) ) {
         $template = "<div class='col-md-$len'>
                         <div class='form-group $statusClass'>";
 
-        if ( $label ) 
+        if ( $label && ( !isset( $attr['display_label'] ) || $attr['display_label'] ) ) 
             $template .= "<label class='control-label' for='$name'>$label</label>";
         
         $template .= "<input    type='$type' 

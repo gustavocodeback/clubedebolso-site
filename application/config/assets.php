@@ -90,3 +90,10 @@ $config['footer'] = [
         site_url( 'assets/components/footer/footer.css' )
     ]
 ];
+
+// seta o footer
+$config['cover'] = [
+    'css'=> [
+        site_url( 'assets/components/cover/cover.css' )
+    ]
+];

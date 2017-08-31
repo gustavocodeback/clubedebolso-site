@@ -1,5 +1,23 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+/*
+|--------------------------------------------------------------------------
+| TABELAS DE AUTENTICAÇÃO
+|--------------------------------------------------------------------------
+|
+| Mapeamento das tabelas diretamente ligadas com o serviço de autenticação
+|
+*/
+$config['Usuario'] = [
+    'UID'      => 'UID',
+    'nome'     => 'Nome',
+    'email'    => 'Email',
+    'senha'    => 'Senha',
+    'login'    => 'Login',
+    'sessao'   => 'Sessao',
+    'cadastro' => 'Cadastro',
+];
+
 // tabela de grupo
 $config['Grupo'] = [
     'grupo'  => 'grupo'
@@ -29,14 +47,6 @@ $config['Estado'] = [
 $config['Cidade'] = [
     'nome'   => 'Nome',
     'estado' => 'CodEstado',
-];
-
-// tabela de usuario
-$config['Usuario'] = [
-    'uid'   => 'uid',
-    'email' => 'email',
-    'senha' => 'password',
-    'gid' => 'gid',
 ];
 
 // tabela do produto

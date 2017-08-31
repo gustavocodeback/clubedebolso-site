@@ -56,8 +56,8 @@ class MY_Model extends CI_Model {
     * retorna a entidade
     *
     */
-    public static function getEntity() {
-        return new self::$entity();
+    public function getEntity() {
+        return new $this->entity;
     }
    /**
     * registerLog
@@ -66,24 +66,7 @@ class MY_Model extends CI_Model {
     *
     */
     protected function registerLog( $action, $id ) {
-
-        // carrega o usuário logado
-        $email = $this->guard->currentUser()->data['email'];
-
-        // seta a mensagem
-        $msg = "O usuário $email $action um(a) $this->entity : código $id";
-
-        // prepara os dados
-        $dados = [
-            'uid'      => $this->guard->currentUser()->data['uid'],
-            'Entidade' => $this->entity,
-            'Acao'     => $action,
-            'Data'     => date( 'Y-m-d H:i:s', time() ),
-            'Mensagem' => $msg
-        ];
-
-        // salva no banco
-        $this->db->insert( 'Logs', $dados );
+        return;
     }
 
    /**
@@ -221,7 +204,7 @@ class MY_Model extends CI_Model {
         return $this;
     }
 
-  /**
+   /**
     * clean
     *
     * limpa o cache
@@ -645,6 +628,59 @@ class MY_Model extends CI_Model {
             if ( $filter['field'] == $field ) return true;
         }
         return false;
+    }
+
+   /**
+    * validate
+    *
+    * valida o formulário de cadastro
+    *
+    */
+    public function validate( $rules, $arr = false ) {
+
+        // verifica se existe um array
+        if ( $arr ) {
+            
+            // verifica se é um array
+            if ( !is_array( $arr ) ) return false;
+
+            // percorre os dados do array
+            foreach( $arr as $k => $item ) $_POST[$k] = $item;
+        }
+
+        // valida o formulário
+        $this->form_validation->set_rules( $rules );
+        return $this->form_validation->run();
+    }
+
+   /**
+    * form
+    *
+    * preenche os atributos da model com os dados enviado
+    *
+    */
+    public function form() {
+        
+        // pega o mapeamento
+        $this->config->load( 'mapping' );
+
+        // pega o item referente
+        $itens = $this->config->item( $this->entity );
+
+        // verifica se existe o item
+        if ( !$itens ) return;
+
+        // seta os dados
+        foreach( $itens as $classe => $tabela ) {
+            
+            // verifica se existe o post
+            if ( $this->input->post( $classe ) ) {
+                $this->$classe = $this->input->post( $classe );
+            }
+        }
+        
+        // retorna a instância
+        return $this;
     }
 }
 

@@ -10,7 +10,7 @@
 | of this setting
 |
 */
-defined( 'USE_DATABASE_VERSIONS' ) OR define( 'USE_DATABASE_VERSIONS', false );
+defined( 'USE_DATABASE_VERSIONS' ) OR define( 'USE_DATABASE_VERSIONS', TRUE );
 
 
 /*
@@ -23,7 +23,7 @@ defined( 'USE_DATABASE_VERSIONS' ) OR define( 'USE_DATABASE_VERSIONS', false );
 | of this setting
 |
 */
-defined( 'USE_DEFAULT_AUTHENTICATION' ) OR define( 'USE_DEFAULT_AUTHENTICATION', TRUE );
+defined( 'USE_DEFAULT_AUTHENTICATION' ) OR define( 'USE_DEFAULT_AUTHENTICATION', FALSE );
 
 /*
 |--------------------------------------------------------------------------
