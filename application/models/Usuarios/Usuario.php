@@ -192,6 +192,24 @@ class Usuario extends UsuariosFinder {
         // limpa a sessao
         $this->session->sess_destroy();
     }
+
+   /**
+    * loggedIn
+    *
+    * verifica se o usuário esta logado
+    * 
+    */
+    public function loggedIn() {
+
+        // verifica se o token da sessao esta correto
+        if ( $this->sessao != $this->session->userdata( 'token' ) ) return false;
+
+        // verifica se o uid estao igual
+        if ( $this->UID != $this->session->userdata( 'uid' ) ) return false;
+
+        // retorna true por padrao
+        return true;
+    }
 }
 
 /* end of file */

@@ -11,12 +11,28 @@
       </div>
 
       <div class="right-content pull-right">
+        
         <button class="btn">
           <span class="glyphicon glyphicon-globe"></span>
         </button>
-        <button class="btn">
-          <span class="glyphicon glyphicon-globe"></span>
-        </button>
+
+        <div class="dropdown pull-right">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <img src="http://u.o0bc.com/avatars/no-user-image.gif" width="30px">
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li>
+              <a href="<?php echo site_url( 'home/logout' ); ?>">
+                Sair do Clube de Bolso
+              </a>
+            </li>
+          </ul>
+        </div>
+
       </div>
 
       <div class="clearfix"></div>
@@ -26,9 +42,10 @@
   <div class="line light horizontal-slide has-nav-link-content">
     <div class="nav-link-content">
       <span class="nav-link active">Inicio</span>
-      <span class="nav-link">Produtos</span>
+      <span class="nav-link">Minha agenda</span>
+      <span class="nav-link">Mensagens</span>
+      <span class="nav-link">Minhas promoções</span>
       <span class="nav-link">Configurações</span>
-      <span class="nav-link">Contato</span>
     </div>
   </div><!-- linha inferior -->
 

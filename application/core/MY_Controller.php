@@ -2,8 +2,14 @@
 
 class MY_Controller extends CI_Controller {
 
-    // indica se o controller é publico ou não
-    protected $public = false;
+    // indica se o controller é para usuários logados somente
+    protected $loggedUsersOnly = false;
+
+    // indica se o controller é para usuário não logados somnete
+    protected $unloggedUsersOnly = false;
+
+    // indica se o controller é livre para qualquer um
+    protected $isFreeToEveryOne = false;
 
     // rota que deve ser redirecionada
     protected $urlGuard;
@@ -29,7 +35,7 @@ class MY_Controller extends CI_Controller {
         $this->urlGuard = site_url( 'login' );
 
         // chama o metodo protetor
-        $this->_guard( $this->public );
+        $this->_guard();
     }
 
     /**
@@ -56,8 +62,31 @@ class MY_Controller extends CI_Controller {
     * protege o acesso para acessos remotos
     *
     */
-    protected function _guard( $public = false ) {
-        return;
+    protected function _guard() {
+        
+        // carrega o usuário logado
+        $user = $this->guard->currentUser();
+
+        // verifica se é livre para todas
+        if ( $this->isFreeToEveryOne ) return;
+
+        // verifica se é para usuários logados somente
+        if ( $this->loggedUsersOnly && !$user ) {
+
+            // redireciona para o login
+            redirect( site_url() );
+            exit();
+            return;
+        }
+
+        // verifica se é para usuários não logados somente
+        if ( $this->unloggedUsersOnly && $user ) {
+
+            // redireciona para a home
+            redirect( site_url( 'home' ) );
+            exit();
+            return;
+        }
     }
 
    /**

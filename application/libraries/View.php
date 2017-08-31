@@ -192,9 +192,12 @@ class View {
 
         // verifica se o arquivo existe
         if ( file_exists( APPPATH.'views/components/'.$component.'.php' ) ) {
+            
+            // carrega o usuário logado
+            $user = $this->ci->guard->currentUser();
 
             // carrega sem a view master
-            return $this->ci->load->view( 'components/'.$component, [ 'view' => $this ], $html );
+            return $this->ci->load->view( 'components/'.$component, [ 'view' => $this, 'user' => $user ], $html );
         } else $this->ci->load->view( 'errors/html/error_404' );
     }
 
@@ -216,15 +219,18 @@ class View {
         // verifica se o arquivo existe
         if ( file_exists( APPPATH.'views/pages/'.$page.'.php' ) ) {
 
+            // carrega o usuário logado
+            $user = $this->ci->guard->currentUser();
+
             // carrega a pagina
             if ( $master ) {
 
                 // carrega a view master
-                return $this->ci->load->view( 'master', [ 'view' => $this ], $html );
+                return $this->ci->load->view( 'master', [ 'view' => $this , 'user' => $user ], $html );
             } else {
 
                  // carrega sem a view master
-                return $this->ci->load->view( 'pages/'.$page, [ 'view' => $this ], $html );
+                return $this->ci->load->view( 'pages/'.$page, [ 'view' => $this, 'user' => $user ], $html );
             }
         } else $this->ci->load->view( 'errors/html/error_404' );
     }

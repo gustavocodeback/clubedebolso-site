@@ -2,6 +2,9 @@
 
 class Login extends MY_Controller {
 
+    // somente para usuários não logados
+    public $unloggedUsersOnly = true;
+
    /**
     * __construct
     *
@@ -103,7 +106,9 @@ class Login extends MY_Controller {
 
         // faz o login
         if ( $usuario->login() ) {
-            echo 'Login realizado com sucesso';
+
+            // redireciona para a home
+            redirect( site_url( 'home' ) );
         } else {
 
             // seta a mensagem de erro

@@ -2,6 +2,9 @@
 
 class Home extends MY_Controller {
 
+    // somente para usuários logados
+    public $loggedUsersOnly = true;
+    
    /**
     * __construct
     *
@@ -15,7 +18,7 @@ class Home extends MY_Controller {
         $this->view->module( 'cover' );
     }
 
-    /**
+   /**
     * index
     *
     * mostra o formulário de login
@@ -25,6 +28,24 @@ class Home extends MY_Controller {
 
         // carrega a pagina
         $this->view->module( 'login' )->setTitle( 'Entrar' )->render( 'home/home' );
+    }
+
+   /**
+    * logout
+    *
+    * faz o logout
+    *
+    */
+    public function logout() {
+
+        // carrega o usuário
+        $usuario = $this->guard->currentUser();
+
+        // faz o logout
+        $usuario->logout();
+
+        // redireciona para o login
+        redirect( site_url() );
     }
 }
 

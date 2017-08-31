@@ -99,6 +99,11 @@
     border: 0px;
 }
 
+#navbar .dropdown .btn {
+    padding: 10px;
+    border: 0px;
+}
+
 @media ( max-width: 600px )  {
     #navbar .line {
         height: 100px;

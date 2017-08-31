@@ -5,3 +5,8 @@
 .aside .logo {
     width: 100%;
 }
+
+.aside .list-group-item.active {
+    background: #726E84;
+    border-color: #726E84;
+}

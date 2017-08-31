@@ -35,6 +35,22 @@ body {
   margin: 5px;
 }
 
+.textarea {
+  width: 100%;
+  border-color: #ccc;
+  padding: 10px;
+  resize: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.card-content {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
 .btn-primary {
   background: #93A8BA !important;
   border-color: #93A8BA !important;

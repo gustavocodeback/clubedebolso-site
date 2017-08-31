@@ -33,6 +33,19 @@ class UsuariosFinder extends MY_Model {
         $this->where( " Email = '$email' " );
         return $this;
     }
+
+   /**
+    * uid
+    *
+    * filtra por uid
+    *
+    */
+    public function uid( $uid ) {
+
+        // pesquisa o email
+        $this->where( " UID = '$uid' " );
+        return $this;
+    }
 }
 
 /* end of file */

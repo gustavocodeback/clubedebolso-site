@@ -413,3 +413,19 @@ if ( ! function_exists( 'print_key' ) ) {
         echo "<input type='hidden' name='cod' value='$val'>";
     }
 }
+
+/**
+ * print_icon
+ *
+ * imprime o icone
+ *
+ */
+ if ( ! function_exists( 'print_icon' ) ) {
+    function print_icon( $icon, $size = '24px' ) {
+
+        // imprime a tag de imagem
+        echo "<img class='flat-icon' width='$size' src='".base_url( 'images/icons/'.$icon.'.png' )."'></img>";
+    }
+}
+
+/* end of file */

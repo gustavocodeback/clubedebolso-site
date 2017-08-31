@@ -97,3 +97,23 @@ $config['cover'] = [
         site_url( 'assets/components/cover/cover.css' )
     ]
 ];
+
+// seta o footer
+$config['minha_loja'] = [
+    'css'=> [
+        site_url( 'assets/pages/minha_loja/index.css' )
+    ]
+];
+
+// inclui o fullcalendar
+$config['calendar'] = [
+    'js' => [
+        site_url( 'assets/moment/moment.js' ),        
+        site_url( 'assets/fullcalendar/dist/fullcalendar.min.js' ),
+        site_url( 'assets/fullcalendar/dist/locale/pt-br.js' ),
+        site_url( 'assets/global/calendar.js' ),
+    ],
+    'css' => [
+        site_url( 'assets/fullcalendar/dist/fullcalendar.min.css' )
+    ]
+];
