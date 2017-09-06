@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-$active_group = 'default';
+$active_group = 'umbler';
 $query_builder = TRUE;
 
 $db['default'] = array(
@@ -99,10 +99,10 @@ $db['default'] = array(
 $db['umbler'] = array(
 	'dsn'	=> '',
 	'version'  => '1.0.0',
-	'hostname' => 'mysql796.umbler.com',
-	'username' => 'contaagil',
+	'hostname' => 'mysql552.umbler.com',
+	'username' => 'clubedebolso',
 	'password' => '18055054a',
-	'database' => 'contaagil',
+	'database' => 'clubedebolso',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
