@@ -56,8 +56,8 @@ body {
   border-color: #93A8BA !important;
 }
 
-.form-control {
-  height: 50px !important;
+.form-control.global {
+  height: 46px !important;
   font-size: 18px !important;
 }
 
@@ -87,6 +87,14 @@ body {
 
 .z-depth-5 {
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.loading-spinner {
+  text-align: center;
+  padding-top: 30px;
+}
+.loading-spinner img {
+  width: 50px;
 }
 
 @media 

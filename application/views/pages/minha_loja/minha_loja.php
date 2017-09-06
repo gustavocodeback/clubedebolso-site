@@ -67,7 +67,7 @@
 
 <div id="footer">
     <div class="container">
-        <button class="btn btn-primary btn-lg">
+        <button class="btn btn-success btn-lg">
             Salvar minha loja
         </button>
     </div>

@@ -15,7 +15,7 @@ class Home extends MY_Controller {
         parent::__construct();
 
         // carrega o módulo da capa
-        $this->view->module( 'cover' );
+        $this->view->module( 'cover' )->set( 'navbar-index', 1 );
     }
 
    /**

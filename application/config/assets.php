@@ -105,6 +105,16 @@ $config['minha_loja'] = [
     ]
 ];
 
+// seta o footer
+$config['acessos'] = [
+    'css'=> [
+        site_url( 'assets/pages/acessos/index.css' )
+    ], 
+    'js'=> [
+        site_url( 'assets/pages/acessos/index.js' )
+    ]
+];
+
 // inclui o fullcalendar
 $config['calendar'] = [
     'js' => [

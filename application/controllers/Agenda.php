@@ -15,7 +15,7 @@ class Agenda extends MY_Controller {
         parent::__construct();
 
         // carrega o módulo da capa
-        $this->view->module( 'calendar' );
+        $this->view->module( 'calendar' )->set( 'navbar-index', 2 );
     }
 
    /**

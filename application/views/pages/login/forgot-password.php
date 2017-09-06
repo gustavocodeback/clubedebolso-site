@@ -14,7 +14,7 @@
                 <h4 style="color: #999">Informe o e-mail da sua conta para recuperar sua senha</h4>
             </div>
 
-            <?php input_text( false, 'email', false, [ 'placeholder' => 'E-mail', 'length' => 12, 'type' => 'email' ] ); ?>
+            <?php input_text( false, 'email', false, [ 'class' => 'global', 'placeholder' => 'E-mail', 'length' => 12, 'type' => 'email' ] ); ?>
             
             <?php if ( $view->item( 'error' ) ): ?>
             <div class="alert alert-danger">

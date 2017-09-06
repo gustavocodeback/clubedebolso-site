@@ -14,8 +14,8 @@
                 <h4 style="color: #999">Entre com a sua conta Clube de Bolso</h4>
             </div>
 
-            <?php input_text( false, 'email', false, [ 'required' => 'required', 'placeholder' => 'E-mail', 'length' => 12, 'type' => 'email' ] ); ?>
-            <?php input_text( false, 'senha', false, [ 'required' => 'required', 'placeholder' => 'Senha', 'length' => 12, 'type' => 'password' ] ); ?>
+            <?php input_text( false, 'email', false, [ 'class' => 'global', 'required' => 'required', 'placeholder' => 'E-mail', 'length' => 12, 'type' => 'email' ] ); ?>
+            <?php input_text( false, 'senha', false, [ 'class' => 'global', 'required' => 'required', 'placeholder' => 'Senha', 'length' => 12, 'type' => 'password' ] ); ?>
             
             <?php if ( $view->item( 'error' ) ): ?>
             <div class="alert alert-danger">

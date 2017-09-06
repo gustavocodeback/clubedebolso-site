@@ -135,6 +135,73 @@ function atualizarSelect( seletor, url, elem ) {
     });
 }
 
+/**
+ * toggleElement
+ * 
+ * esconde/exibe um elemento
+ * 
+ * @param {string} seletor o seletor do elemento
+ */
+function toggleElement( seletor ) {
+
+    // esconde ou mostra o selector
+    $( seletor ).toggleClass( 'hidden' );
+}
+
+/**
+ * abrir
+ * 
+ * abre um elemento
+ * 
+ * @param {string} seletor o seletor do elemento
+ */
+function abrir( seletor ) {
+    $( seletor ).removeClass( 'hidden' );
+}
+
+/**
+ * fechar
+ * 
+ * fecha um elemento
+ * 
+ * @param {string} seletor o seletor do elemento
+ */
+function fechar( seletor, limpar = false ) {
+
+    // esconde o item
+    $( seletor ).addClass( 'hidden' );
+    
+    // verifica se deve limpar a div
+    if ( limpar ) {
+        $( seletor ).html( '' );
+    }
+}
+
+/**
+ * carregar
+ * 
+ * carrega um conteudo via ajax
+ * 
+ * @param {string} url a url do ajax
+ * @param {object} dados os dados que serão enviados
+ * @param {string} recipiente o recipiente com o conteudo
+ * @param {string} loading o loading enquando estiver carregando
+ */
+function carregar( url, dados, recipiente, loading = false ) {
+
+    // faz a requisicao ajax
+    $.post( Site.url+url, dados, function( data ) {
+
+        // seta o html do recipiente
+        $( recipiente ).html( data );
+    })
+    .always( function() {
+
+        // esconde o loading
+        if ( loading ) fechar( loading );
+    });
+}
+
 $( document ).ready( function() {
     $('.fade-in').animate( { opacity: 1 }, 1000 );
 });

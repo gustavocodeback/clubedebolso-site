@@ -1,4 +1,24 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+
+/**
+ * printItem
+ *
+ * imprime o item da coluna esquerda
+ *
+ */
+function printItemNavbar( $text, $link, $actual, $index ) {
+
+    // seta a classe
+    $cl = $index == $actual ? 'active' : '';
+
+    // imprime o item
+    echo "<a href='".site_url( $link )."' class='nav-link $cl'>$text</a>";    
+}
+
+// seta o indice selecionado
+$index = $view->item( 'navbar-index' );
+
+?>
 <div id="navbar" class="z-depth-1 fade-in">
  
 <div class="line container">
@@ -41,11 +61,11 @@
 
   <div class="line light horizontal-slide has-nav-link-content">
     <div class="nav-link-content">
-      <span class="nav-link active">Inicio</span>
-      <span class="nav-link">Minha agenda</span>
-      <span class="nav-link">Mensagens</span>
-      <span class="nav-link">Minhas promoções</span>
-      <span class="nav-link">Configurações</span>
+      <?php echo printItemNavbar( 'Início',           'home',          1, $index ); ?>
+      <!-- <?php echo printItemNavbar( 'Minha agenda',     'agenda',        2, $index ); ?>
+      <?php echo printItemNavbar( 'Mensagens',        'mensagens',     3, $index ); ?>
+      <?php echo printItemNavbar( 'Minhas promoções', 'promocoes',     4, $index ); ?>
+      <?php echo printItemNavbar( 'Configurações',    'configuracoes', 5, $index ); ?> -->
     </div>
   </div><!-- linha inferior -->
 

@@ -29,11 +29,12 @@ $index = $view->item( 'aside-index' );
         <h6><?php echo $user->email; ?></h6>
     </div>
     <div class="col-md-12">
-        <ul class="list-group">
+        <ul class="list-group z-depth-1">
             <?php printItem( 'Minha loja', 'minha_loja', 1, $index ); ?>
-            <?php printItem( 'Meu aplicativo', 'meu_aplicativo', 2, $index ); ?>
+            <!-- <?php printItem( 'Meu aplicativo', 'meu_aplicativo', 2, $index ); ?>
             <?php printItem( 'Meu site', 'meu_site', 2, $index ); ?>
-            <?php printItem( 'Minha assinatura', 'meu_site', 3, $index ); ?>
+            <?php printItem( 'Minha assinatura', 'meu_site', 3, $index ); ?> -->
+            <?php printItem( 'Acessos', 'acessos', 4, $index ); ?> 
         </ul>
     </div>
     <hr>    

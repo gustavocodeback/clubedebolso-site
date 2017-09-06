@@ -15,7 +15,7 @@ class Minha_loja extends MY_Controller {
         parent::__construct();
 
         // carrega o módulo da capa
-        $this->view->module( 'minha_loja' );
+        $this->view->module( 'minha_loja' )->set( 'navbar-index', 1 );
     }
 
    /**
