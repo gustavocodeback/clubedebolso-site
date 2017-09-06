@@ -102,6 +102,9 @@ $config['cover'] = [
 $config['minha_loja'] = [
     'css'=> [
         site_url( 'assets/pages/minha_loja/index.css' )
+    ], 
+    'js'=> [
+        site_url( 'assets/pages/minha_loja/index.js' )
     ]
 ];
 

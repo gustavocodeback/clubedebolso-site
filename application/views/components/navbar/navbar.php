@@ -19,7 +19,7 @@ function printItemNavbar( $text, $link, $actual, $index ) {
 $index = $view->item( 'navbar-index' );
 
 ?>
-<div id="navbar" class="z-depth-1 fade-in">
+<div id="navbar" class="z-depth-1">
  
 <div class="line container">
     <div class="row">

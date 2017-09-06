@@ -48,7 +48,9 @@
                     <div role="tabpanel" class="tab-pane" id="profile">
                         <?php $view->render( 'minha_loja/form_endereco' ); ?>                        
                     </div>
-                    <div role="tabpanel" class="tab-pane" id="messages">...</div>
+                    <div role="tabpanel" class="tab-pane" id="messages">
+                        <?php $view->render( 'minha_loja/form_funcionamento' ); ?>  
+                    </div>
                     <div role="tabpanel" class="tab-pane" id="social">...</div>
                     <div role="tabpanel" class="tab-pane" id="settings">...</div>
                 </div><!-- conteudo das tabs -->
