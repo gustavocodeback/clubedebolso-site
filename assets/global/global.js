@@ -203,5 +203,10 @@ function carregar( url, dados, recipiente, loading = false ) {
 }
 
 $( document ).ready( function() {
+
+    // seta a animacao de fade in
     $('.fade-in').animate( { opacity: 1 }, 1000 );
+
+    // habilita o tooltip
+    $('[data-toggle="tooltip"]').tooltip();
 });

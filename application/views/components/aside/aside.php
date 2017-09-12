@@ -37,5 +37,10 @@ $index = $view->item( 'aside-index' );
             <?php printItem( 'Acessos', 'acessos', 4, $index ); ?> 
         </ul>
     </div>
-    <hr>    
+    <hr>
+    <div class="col-md-12">
+        <ul class="list-group z-depth-1">
+            <?php printItem( 'Meus créditos', 'meus_creditos', 5, $index ); ?>
+        </ul>
+    </div>   
 </div>

@@ -28,30 +28,37 @@ $index = $view->item( 'navbar-index' );
         <button>
           <span class="glyphicon glyphicon-search"></span>
         </button>
-      </div>
+      </div><!-- barra de pesquisa -->
 
       <div class="right-content pull-right">
         
-        <button class="btn">
+        <button class="btn" data-toggle="tooltip" data-placement="bottom" title="Meus créditos">
+          <?php print_icon( 'coins', '18px' ); ?>
+          <small style="color: #BDF590">R$ 
+            <?php echo number_format( $user->creditos, 2, ',', '  ' ); ?>
+          </small>
+        </button><!-- botao de créditos -->
+
+        <button class="btn" data-toggle="tooltip" data-placement="bottom" title="Notificações Clube de Bolso">
           <span class="glyphicon glyphicon-globe"></span>
-        </button>
+        </button><!-- botao de notificacoes -->
 
         <div class="dropdown pull-right">
           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             <img src="http://u.o0bc.com/avatars/no-user-image.gif" width="30px">
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li>
+              <a href="<?php echo site_url( 'meus_dados' ); ?>">Meus dados</a>
+            </li>
             <li role="separator" class="divider"></li>
             <li>
               <a href="<?php echo site_url( 'home/logout' ); ?>">
-                Sair do Clube de Bolso
+                Sair
               </a>
             </li>
           </ul>
-        </div>
+        </div><!-- botao de ações do usuário -->
 
       </div>
 
@@ -61,11 +68,11 @@ $index = $view->item( 'navbar-index' );
 
   <div class="line light horizontal-slide has-nav-link-content">
     <div class="nav-link-content">
-      <?php echo printItemNavbar( 'Início',           'home',          1, $index ); ?>
-      <!-- <?php echo printItemNavbar( 'Minha agenda',     'agenda',        2, $index ); ?>
-      <?php echo printItemNavbar( 'Mensagens',        'mensagens',     3, $index ); ?>
-      <?php echo printItemNavbar( 'Minhas promoções', 'promocoes',     4, $index ); ?>
-      <?php echo printItemNavbar( 'Configurações',    'configuracoes', 5, $index ); ?> -->
+      <?php echo printItemNavbar( 'Início',            'home',          1, $index ); ?>
+      <!-- <?php echo printItemNavbar( 'Minha agenda', 'agenda',        2, $index ); ?>
+      <?php echo printItemNavbar( 'Mensagens',         'mensagens',     3, $index ); ?>
+      <?php echo printItemNavbar( 'Minhas promoções',  'promocoes',     4, $index ); ?>
+      <?php echo printItemNavbar( 'Configurações',     'configuracoes', 5, $index ); ?> -->
     </div>
   </div><!-- linha inferior -->
 

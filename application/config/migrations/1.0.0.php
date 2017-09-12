@@ -33,6 +33,11 @@ $config['schema']['Usuarios'] = [
     ],
     'Login' => [
         'type' => 'datetime',
+    ],
+    'Creditos' => [
+        'type'    => 'float',
+        'null'    => false,
+        'default' => 0
     ]
 ];
 

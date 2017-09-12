@@ -28,6 +28,42 @@ class Usuario extends UsuariosFinder {
     // data do ultimo login
     public $login;
 
+    // créditos do usuário
+    public $creditos;
+
+    // cpf
+    public $cpf;
+
+    // aniversario
+    public $aniversario;
+
+    // telefone
+    public $telefone;
+
+    // celular
+    public $celular;
+
+    // estado
+    public $estado;
+
+    // cidade
+    public $cidade;
+
+    // endereco
+    public $endereco;
+
+    // cep
+    public $cep;
+
+    // bairro
+    public $bairro;
+
+    // numero
+    public $numero;
+
+    // complemento
+    public $complemento;
+
    /**
     * __construct
     *

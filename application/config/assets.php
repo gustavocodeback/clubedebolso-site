@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 // pacotes padroes
-$config['default'] = [ 'jquery', 'global', 'bootstrap', 'navbar', 'aside', 'footer' ];
+$config['default'] = [ 'jquery', 'global', 'bootstrap', 'navbar', 'aside', 'footer', 'jquery-mask' ];
 
 // configuracao dos assets globais
 $config['global'] = [
@@ -36,13 +36,6 @@ $config['jquery-mask'] = [
     'js' => [
         site_url( 'assets/jquery-mask-plugin/dist/jquery.mask.min.js' ),
         site_url( 'assets/global/masks.js' ),
-    ]
-];
-
-// inclui o vue
-$config['vue'] = [
-    'js' => [
-        site_url( 'assets/vue/dist/vue.min.js' )
     ]
 ];
 

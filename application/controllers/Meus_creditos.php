@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Minha_loja extends MY_Controller {
+class Meus_creditos extends MY_Controller {
 
     // somente para usuários logados
     public $loggedUsersOnly = true;
@@ -15,7 +15,7 @@ class Minha_loja extends MY_Controller {
         parent::__construct();
 
         // carrega o módulo da capa
-        $this->view->module( 'minha_loja' )->set( 'navbar-index', 1 );
+        $this->view->module( 'meus_creditos' )->set( 'navbar-index', 1 );
     }
 
    /**
@@ -27,10 +27,9 @@ class Minha_loja extends MY_Controller {
     public function index() {
 
         // carrega a pagina
-        $this->view->module( 'login' )
-                   ->set( 'aside-index', 1 )
-                   ->setTitle( 'Minha loja' )
-                   ->render( 'minha_loja/minha_loja' );
+        $this->view->set( 'aside-index', 5 )
+                   ->setTitle( 'Meus créditos' )
+                   ->render( 'meus_creditos/index' );
     }
 }
 

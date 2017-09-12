@@ -16,6 +16,7 @@ $config['Usuario'] = [
     'login'    => 'Login',
     'sessao'   => 'Sessao',
     'cadastro' => 'Cadastro',
+    'creditos' => 'Creditos'
 ];
 
 // tabela de grupo
